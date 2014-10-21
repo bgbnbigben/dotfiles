@@ -25,6 +25,5 @@ PUR="\[\033[1;35m\]"
 CYA="\[\033[1;36m\]"
 export PS1="(\$(date +'%H:%M:%S'))$BLU\u$DEF@$CYA\h$DEF $YEL\w $GRE\$(current_branch)$RED$ $DEF"
 
-source $HOME/.rvm/scripts/rvm
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+[[ -f $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 alias reset=reset_terminal
