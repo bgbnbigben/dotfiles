@@ -24,7 +24,8 @@ Bundle 'tpope/vim-abolish'
 Bundle 'mjio/jellybeans.vim'
 Bundle 'bling/vim-airline'
 Bundle 'octol/vim-cpp-enhanced-highlight'
-"
+Bundle 'kien/rainbow_parentheses.vim'
+
 " vim-scripts
 Bundle 'L9'
 Bundle 'TaskList.vim'
@@ -83,7 +84,9 @@ EOF
 endif
 
 syntax enable
-"
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " Make syntastic work nicer
 let g:syntastic_enable_balloons = 1
 " pylint gives me the shits.
@@ -94,11 +97,6 @@ let g:syntastic_auto_loc_list=1
 
 " Map f8 for Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Fix :s
-" Currently doesn't work reliably
-cabbrev s <c-r>=(getcmdtype()==':' && (getcmdpos()==1) ? 'Subvert' : 's')<CR>
-cabbrev %s <c-r>=(getcmdtype()==':' && (getcmdpos()==1) ? '%Subvert' : '%s')<CR>
 
 " Remap ctrl+arrows to move between window splits
 nmap <silent> <C-Up> :wincmd k<CR>
@@ -127,3 +125,9 @@ fu! SetCppConceals()
     syntax match cppSmartPtr "\(std::\)\?weak_ptr" conceal cchar=▲
 endfunction
 au FileType cpp call SetCppConceals()
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
