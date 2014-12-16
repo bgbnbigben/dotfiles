@@ -25,6 +25,7 @@ Bundle 'mjio/jellybeans.vim'
 Bundle 'bling/vim-airline'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'KabbAmine/zeavim.vim'
 
 " vim-scripts
 Bundle 'L9'
@@ -130,4 +131,7 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons
+
+" eclim for Java code :(
+let g:EclimCompletionMethod = 'omnifunc'
+au FileType java set noexpandtab
