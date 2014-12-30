@@ -5,32 +5,32 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
-" My Bundles here:
+" My Plugins here:
 "
 " original repos on github
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'groenewege/vim-less'
-Bundle 'ap/vim-css-color'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'sophacles/vim-bundle-mako'
-Bundle 'klen/python-mode'
-Bundle 'tpope/vim-abolish'
-Bundle 'mjio/jellybeans.vim'
-Bundle 'bling/vim-airline'
-Bundle 'octol/vim-cpp-enhanced-highlight'
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'groenewege/vim-less'
+Plugin 'ap/vim-css-color'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'sophacles/vim-bundle-mako'
+Plugin 'klen/python-mode'
+Plugin 'tpope/vim-abolish'
+Plugin 'mjio/jellybeans.vim'
+Plugin 'bling/vim-airline'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'KabbAmine/zeavim.vim'
 
 " vim-scripts
-Bundle 'L9'
-Bundle 'TaskList.vim'
-Bundle 'Latex-Text-Formatter'
+Plugin 'L9'
+Plugin 'TaskList.vim'
+Plugin 'Latex-Text-Formatter'
 
 call vundle#end()
 filetype plugin indent on
