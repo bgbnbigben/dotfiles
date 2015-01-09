@@ -137,3 +137,9 @@ au Syntax * RainbowParenthesesLoadBraces
 " eclim for Java code :(
 let g:EclimCompletionMethod = 'omnifunc'
 au FileType java set noexpandtab
+
+" I'm going to break this god damn habit
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
