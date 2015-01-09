@@ -26,14 +26,9 @@ eval my_orange='$FG[214]'
 #
 function prompt_git_info() {
     if [ -n "$__CURRENT_GIT_STATUS" ]; then
-        echo " (on %{${fg_bold[cyan]}%}$__CURRENT_GIT_STATUS[1]%{${fg_bold[yellow]}%}$__CURRENT_GIT_STATUS[2]%{${fg[green]}%}$__CURRENT_GIT_STATUS[3]%{${fg_no_bold[default]}%})"
+        echo " (on %{${fg_bold[cyan]}%}$__CURRENT_GIT_STATUS[1]%{${fg_bold[yellow]}%}$__CURRENT_GIT_STATUS[2]%{${fg[green]}%}$__CURRENT_GIT_STATUS[3]%{${fg_no_bold[default]}%} )"
     fi
 }
-
-ZSH_THEME_GIT_PROMPT_PREFIX=" (on "
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
