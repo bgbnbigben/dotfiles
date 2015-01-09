@@ -82,4 +82,8 @@ bindkey '^N' history-search-forward
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-export TERM='xterm-256color'
+if [[ -z $TMUX ]]; then
+    export TERM='xterm-256color'
+else
+    export TERM='screen-256color'
+fi 
