@@ -26,7 +26,7 @@ eval my_orange='$FG[214]'
 #
 function prompt_git_info() {
     if [ -n "$__CURRENT_GIT_STATUS" ]; then
-        echo " (on %{${fg_bold[cyan]}%}$__CURRENT_GIT_STATUS[1]%{${fg_bold[yellow]}%}$__CURRENT_GIT_STATUS[2]%{${fg[green]}%}$__CURRENT_GIT_STATUS[3]%{${fg_no_bold[default]}%} )"
+        echo " (on %{${fg_bold[cyan]}%}$__CURRENT_GIT_STATUS[1]%{${fg_bold[yellow]}%}$__CURRENT_GIT_STATUS[2]%{${fg[green]}%}$__CURRENT_GIT_STATUS[3]%{${fg_no_bold[default]}%})"
     fi
 }
 
