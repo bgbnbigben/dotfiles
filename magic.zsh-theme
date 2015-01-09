@@ -1,8 +1,4 @@
-# Modified by Rafi Blecher
-#
-# raf.zsh-theme
-# Repo: https://github.com/andyfleming/oh-my-zsh
-# Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
+# Modified version of the af-magic theme
 
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
@@ -27,23 +23,6 @@ eval my_orange='$FG[214]'
 # git settings
 
 # Show different symbols as appropriate for various Git repository states
-#function git_state_colour {
-#
-#  # Compose this value via multiple conditional appends.
-#  local git_status="$(git status 2> /dev/null)"
-#
-#  if [[ $git_status =~ "diverged" ]]; then
-#    echo -e my_orange
-#  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-#    echo -e $fg[yellow]
-#  elif [[ $git_status =~ "nothing to commit" ]]; then
-#    echo -e $fg[green]
-#  elif ! [[ $git_status =~ "working directory clean" ]]; then
-#    echo -e $fg[red]
-#  else
-#    echo -e $fg[ochre]
-#  fi
-#}
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" (on "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
