@@ -37,7 +37,7 @@ filetype plugin indent on
 
 set background=dark
 let base16colorspace=256
-colorscheme base16-atelierforest
+colorscheme base16-atelierdune
 
 set modeline
 set smartindent
