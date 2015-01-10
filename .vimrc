@@ -21,7 +21,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'sophacles/vim-bundle-mako'
 Plugin 'klen/python-mode'
 Plugin 'tpope/vim-abolish'
-Plugin 'mjio/jellybeans.vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -35,7 +35,9 @@ Plugin 'Latex-Text-Formatter'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme jellybeans
+set background=dark
+let base16colorspace=256
+colorscheme base16-atelierforest
 
 set modeline
 set smartindent
@@ -67,8 +69,6 @@ if has("multi_byte")
   setglobal fileencoding=utf-8
   set fileencodings=ucs-bom,utf-8,latin1
 endif
-
-set term=xterm-256color
 
 " Now, make python work with virtualenvs:
 if has("python") && !empty($VIRTUAL_ENV)
