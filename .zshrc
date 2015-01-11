@@ -91,3 +91,21 @@ fi
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-atelierdune.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# At least tell me what mode I'm in....
+vim_ins_mode="%{$bg[green]%}%{$fg[black]%}INSERT%{$reset_color%}"
+vim_cmd_mode="%{$bg[blue]%}%{$fg[black]%}NORMAL%{$reset_color%}"
+vim_mode=$vim_ins_mode
+
+function zle-keymap-select {
+    vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-finish {
+    vim_mode=$vim_ins_mode
+}
+zle -N zle-line-finish
+
+RPROMPT='${vim_mode}'
