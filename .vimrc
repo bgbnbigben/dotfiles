@@ -26,6 +26,7 @@ Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'KabbAmine/zeavim.vim'
+Plugin 'tpope/vim-obsession'
 
 " vim-scripts
 Plugin 'L9'
