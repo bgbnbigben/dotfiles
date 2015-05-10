@@ -24,7 +24,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'tpope/vim-obsession'
 
@@ -48,8 +48,7 @@ set textwidth=79
 set backspace=indent,eol,start
 set softtabstop=4
 set expandtab
-set clipboard+=unnamed
-set clipboard+=unnamedplus
+set clipboard=unnamed
 set go+=a
 set number
 set laststatus=2
@@ -130,10 +129,19 @@ fu! SetCppConceals()
 endfunction
 au FileType cpp call SetCppConceals()
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+   \ 'ctermfgs': ['Darkblue', 'darkgreen', 'darkcyan', 'darkred', 'darkmagenta', 'brown', 'grey', 'lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+   \ 'separately': {
+   \   'cpp': {
+   \     'parentheses': [
+   \       'start=/(/ end=/)/ fold',
+   \       'start=/\[/ end=/\]/ fold',
+   \       'start=/{/ end=/}/ fold',
+   \       'start=/\(\(\<operator\>\)\@<!<\)\&[a-zA-Z0-9_]\@<=<\ze[^<]/ end=/>/']
+   \   }
+   \ }
+\ }
 
 " eclim for Java code :(
 let g:EclimCompletionMethod = 'omnifunc'
