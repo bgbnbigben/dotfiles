@@ -27,6 +27,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'luochen1990/rainbow'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'tpope/vim-obsession'
+Plugin 'altercation/vim-colors-solarized'
 
 " vim-scripts
 Plugin 'L9'
@@ -37,8 +38,7 @@ call vundle#end()
 filetype plugin indent on
 
 set background=dark
-let base16colorspace=256
-colorscheme base16-atelierdune
+colorscheme solarized
 
 set modeline
 set smartindent
