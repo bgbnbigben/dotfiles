@@ -49,7 +49,7 @@ plugins=(git git-prompt git-extras pip tmux virtualenv virtualenvwrapper vi-mode
 
 # User configuration
 
-export PATH="/home/ben/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/ben/.rvm/bin"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -143,3 +143,5 @@ zstyle ':completion:tmux-pane-words-anywhere:*' matcher-list 'b:=* m:{A-Za-z}={a
 
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD 
+
+[[ -e ~/.zshrc_extensions ]] && . ~/.zshrc_extensions
