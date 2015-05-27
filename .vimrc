@@ -25,9 +25,18 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'luochen1990/rainbow'
-Plugin 'KabbAmine/zeavim.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fmoralesc/vim-pad'
+Plugin 'fmoralesc/vim-tutor-mode'
+
+if has("unix") && system("uname -s") == "Darwin\n"
+  Plugin 'rizzatti/dash.vim'
+  nmap <silent> <leader>z <Plug>DashSearch
+  let g:pad#search_backend = "ack"
+else
+  Plugin 'KabbAmine/zeavim.vim'
+endif
 
 " vim-scripts
 Plugin 'L9'
@@ -98,6 +107,8 @@ let g:syntastic_python_checkers = ['flake8', 'pyflakes']
 let g:syntastic_cpp_compiler_options = '-I${HOME}/openmpi/env/include -std=c++11'
 let g:syntastic_auto_loc_list=1
 
+let g:pad#dir = fnamemodify("~/.vim/notes/", ":p")
+
 " Map f8 for Tagbar
 nmap <F8> :TagbarToggle<CR>
 
@@ -145,7 +156,7 @@ let g:rainbow_conf = {
 
 " eclim for Java code :(
 let g:EclimCompletionMethod = 'omnifunc'
-au FileType java set noexpandtab
+"au FileType java set noexpandtab
 
 " I'm going to break this god damn habit
 noremap <Up> <NOP>
