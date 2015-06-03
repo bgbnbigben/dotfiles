@@ -142,6 +142,4 @@ zstyle ':completion:tmux-pane-words-anywhere:*' matcher-list 'b:=* m:{A-Za-z}={a
 # }}} 
 
 
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD 
-
 [[ -e ~/.zshrc_extensions ]] && . ~/.zshrc_extensions
