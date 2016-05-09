@@ -1,22 +1,32 @@
 set nocompatible
+
+" Include extensions first since we should check what plugins they install.
+if filereadable(".vimrc_extensions")
+  so .vimrc_extensions
+endif
+
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
 "
 " original repos on github
-Plugin 'Valloric/YouCompleteMe'
+" Don't need YCM with Glug, since it should manage it..
+if !exists(":Glug")
+  Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'groenewege/vim-less'
 Plugin 'ap/vim-css-color'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'sophacles/vim-bundle-mako'
 Plugin 'klen/python-mode'
@@ -44,16 +54,16 @@ Plugin 'TaskList.vim'
 Plugin 'Latex-Text-Formatter'
 
 call vundle#end()
-filetype plugin indent on
 
 set background=dark
-colorscheme solarized
+let base16colorspace=256
+colorscheme base16-atelierdune
 
 set modeline
 set smartindent
 set tabstop=4
 set shiftwidth=4
-set textwidth=79
+set textwidth=80
 set backspace=indent,eol,start
 set softtabstop=4
 set expandtab
@@ -93,8 +103,6 @@ if 'PYTHONPATH' not in os.environ:
 EOF
 endif
 
-syntax enable
-
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -108,6 +116,20 @@ let g:syntastic_cpp_compiler_options = '-I${HOME}/openmpi/env/include -std=c++11
 let g:syntastic_auto_loc_list=1
 
 let g:pad#dir = fnamemodify("~/.vim/notes/", ":p")
+
+if executable("ag")
+  " Set up ctrlp to work with ag instead of globpath
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+	\ --ignore .git
+	\ --ignore .svn
+	\ --ignore .hg
+	\ --ignore .DS_Store
+	\ --ignore "**/*.pyc"
+	\ --ignore .git5_specs
+	\ --ignore review
+	\ -g ""'
+endif
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Map f8 for Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -167,3 +189,6 @@ noremap <Right> <NOP>
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+filetype plugin indent on
+syntax enable
