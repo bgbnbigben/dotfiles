@@ -1,8 +1,8 @@
 set nocompatible
 
 " Include extensions first since we should check what plugins they install.
-if filereadable(".vimrc_extensions")
-  so .vimrc_extensions
+if filereadable(expand("$HOME/.vimrc_extensions"))
+  source $HOME/.vimrc_extensions
 endif
 
 filetype off                   " required!
@@ -57,7 +57,7 @@ call vundle#end()
 
 set background=dark
 let base16colorspace=256
-colorscheme base16-atelierdune
+colorscheme base16-atelier-dune
 
 set modeline
 set smartindent
